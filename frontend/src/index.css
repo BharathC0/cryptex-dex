@@ -1,0 +1,76 @@
+:root {
+  --bg-primary: #0b0e11;
+  --bg-secondary: #13171f;
+  --bg-card: #1a1f2e;
+  --bg-hover: #222840;
+  --border: #2a3044;
+  --border-light: #3a4060;
+  --accent-yellow: #f0b90b;
+  --accent-yellow-dim: rgba(240, 185, 11, 0.15);
+  --accent-green: #0ecb81;
+  --accent-green-dim: rgba(14, 203, 129, 0.15);
+  --accent-red: #f6465d;
+  --accent-red-dim: rgba(246, 70, 93, 0.15);
+  --accent-blue: #1890ff;
+  --text-primary: #eaecef;
+  --text-secondary: #848e9c;
+  --text-muted: #5a6478;
+  --font-mono: 'Space Mono', monospace;
+  --font-display: 'Syne', sans-serif;
+  --radius: 8px;
+  --radius-lg: 16px;
+  --shadow: 0 4px 24px rgba(0,0,0,0.4);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-display);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-secondary); }
+::-webkit-scrollbar-thumb { background: var(--border-light); border-radius: 3px; }
+
+button { cursor: pointer; border: none; outline: none; font-family: var(--font-display); }
+input { outline: none; font-family: var(--font-display); }
+a { text-decoration: none; color: inherit; }
+
+.green { color: var(--accent-green); }
+.red { color: var(--accent-red); }
+.yellow { color: var(--accent-yellow); }
+.muted { color: var(--text-secondary); }
+
+.fade-in {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, var(--bg-card) 25%, var(--bg-hover) 50%, var(--bg-card) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--radius);
+}
